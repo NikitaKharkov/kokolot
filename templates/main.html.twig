@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block body %}
+    <style>
+        .main {
+            border:1px solid red;
+            margin: 40px 20px;
+            flex-wrap: wrap;
+            display: flex;
+            justify-content: space-between;
+        }
+        .main-picture {
+            width: 100%;
+        }
+
+        .main-picture img {
+            width: 100%;
+        }
+
+    </style>
+    <div class="main">
+        <div class="main-picture">
+            <img src="{{ asset('img/main.jpg') }}" alt="main" title="Главная картинка">
+        </div>
+        <div>
+            Некоторое описание кто мы и что мы и что из себя представляем.
+        </div>
+        <div class="contact-form">
+            <form action="#">
+                <div class="form-group">
+                    <label for="title">Название организации</label>
+                    <input class="form-control" id="title">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Контактный телефон</label>
+                    <input class="form-control" id="phone">
+                </div>
+                <div class="form-group">
+                    <label for="email">Контактный email</label>
+                    <input class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="msg">Текст сообщения</label>
+                    <textarea id="msg" cols="30" rows="10"></textarea>
+                </div>
+            </form>
+        </div>
+
+    </div>
+{% endblock %}

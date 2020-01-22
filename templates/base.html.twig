@@ -3,10 +3,69 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            body {
+                background-color: #fef9f8;
+            }
+            header {
+                display: flex;
+                justify-content: center;
+                margin: 10px;
+            }
+            header > h1 {
+                line-height: 2.5;
+                margin: 0 0 0 10px;
+            }
+            menu {
+                margin: 0;
+                background-color: #c76a57;
+                padding: 0;
+                border-radius: 7px;
+            }
+
+            main {
+                box-shadow: 0 0 15px 2px;
+                margin: 20px 2px;
+                border-radius: 7px;
+            }
+        </style>
+
         {% block stylesheets %}{% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    <body class="body">
+    <div class="container">
+        <header>
+            <img src="{{ asset('img/logo.png') }}" alt="logo" title="Логотип лотапласт">
+            <h1>ООО "Лотапласт"</h1>
+        </header>
+        <menu>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Продукция</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Типы упаковки</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </menu>
+        <main class="d-flex main-wrapper">
+            {% block body %}{% endblock %}
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    {% block javascripts %}{% endblock %}
     </body>
 </html>
