@@ -31,12 +31,17 @@ class Container
      */
     private $size;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $imageUrl;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -48,7 +53,7 @@ class Container
         return $this;
     }
 
-    public function getSize(): ?int
+    public function getSize(): int
     {
         return $this->size;
     }
@@ -60,13 +65,27 @@ class Container
         return $this;
     }
 
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
 
-    public function setDescription($description): void
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getImageUrl(): ?string
+    {
+        return $this->imageUrl;
+    }
+
+    public function setImageUrl($imageUrl): self
+    {
+        $this->imageUrl = $imageUrl;
+
+        return $this;
     }
 }

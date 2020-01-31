@@ -2,21 +2,21 @@
 
 namespace App\Repository;
 
-use App\Entity\TrayType;
+use App\Entity\Tray;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method TrayType|null find($id, $lockMode = null, $lockVersion = null)
- * @method TrayType|null findOneBy(array $criteria, array $orderBy = null)
- * @method TrayType[]    findAll()
- * @method TrayType[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Tray|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Tray|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Tray[]    findAll()
+ * @method Tray[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class TrayTypeRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, TrayType::class);
+        parent::__construct($registry, Tray::class);
     }
 
     // /**
